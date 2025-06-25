@@ -1,13 +1,19 @@
 {
   "name": "Python Flask Development Container",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "hostRequirements": {
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "pip install -r requirements.txt",
-  "postCreateCommand": "",
-  "postAttachCommand": {},
+  "postCreateCommand": "",  // You can add setup scripts here if needed
+  "postStartCommand": "",   // For commands to run each Codespace start
   "customizations": {
     "vscode": {
       "settings": {
@@ -25,11 +31,11 @@
         "workbench.colorTheme": "Default Dark+",
         "workbench.iconTheme": "vscode-icons",
         "github.copilot.enable": {
-      		"python": false,
-      		"html": false,
-      		"css": false,
-      		"SQL": false
-      	},
+          "python": false,
+          "html": false,
+          "css": false,
+          "SQL": false
+        },
         "chat.agent.enabled": false
       },
       "extensions": [
@@ -46,6 +52,13 @@
         "ms-python.pylint",
         "bierner.markdown-mermaid"
       ]
+    }
+  },
+  "forwardPorts": [5000],  // Add the port your Flask app runs on, or others as needed
+  "portsAttributes": {
+    "5000": {
+      "label": "Flask App",
+      "onAutoForward": "openBrowser"
     }
   }
 }
