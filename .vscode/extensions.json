@@ -1,8 +1,8 @@
 {
   "recommendations": [
     "McCarter.start-git-bash",
-    "medo64.render-crlf",
     "ms-python.python",
+    "esbenp.prettier-vscode",
     "oderwat.indent-rainbow",
     "tomoki1207.pdf",
     "GitHub.codespaces",
