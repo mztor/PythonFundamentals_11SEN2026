@@ -39,6 +39,7 @@
         "chat.agent.enabled": false
       },
       "extensions": [
+        "ms-python.black-formatter",
         "McCarter.start-git-bash",
         "ms-python.python",
         "esbenp.prettier-vscode",
